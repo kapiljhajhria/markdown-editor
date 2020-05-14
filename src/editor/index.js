@@ -19,11 +19,11 @@ export default function Editor(props) {
         let res = textAreaValue.replace(/^([#][#] )(.*)/gm, (m,g)=>`{<h2>hi</h2>}`)
         return res
     }
-    function htmlDecode(input){
-        var e = document.createElement('div');
-        e.innerHTML = input;
-        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
-    }
+    // function htmlDecode(input){
+    //     var e = document.createElement('div');
+    //     e.innerHTML = input;
+    //     return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    // }
     useEffect(() => {
         console.log("useffect called");
 
