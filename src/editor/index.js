@@ -16,8 +16,9 @@ export default function Editor(props) {
     }
 
     function txtToMarkDown(txt) {
-        let res = textAreaValue.replace(/^([#][#] )(.*)/gm, (m,g)=>`{<h2>hi</h2>}`)
-        return res
+        let res = textAreaValue.replace(/^([#][#] )(.*)/gm, (m,g)=>`<h2>${m.slice(3)}</h2>`);
+        res = res.replace(/^([#][#][#] )(.*)/gm, (m,g)=>`<h3>${m.slice(3)}</h3>`);
+        return React.createElement("p", {dangerouslySetInnerHTML: {__html: res}})
     }
     // function htmlDecode(input){
     //     var e = document.createElement('div');
@@ -38,7 +39,7 @@ export default function Editor(props) {
 
             <div className="txtOutput">
                 {/*<div dangerouslySetInnerHTML={{ __html: htmlDecode(testString) }} />*/}
-                {React.createElement("p", {dangerouslySetInnerHTML: {__html: testString}})}
+                {txtToMarkDown(textAreaValue)}
             </div>
         </div>
     )
