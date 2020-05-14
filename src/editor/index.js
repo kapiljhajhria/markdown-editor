@@ -16,10 +16,12 @@ export default function Editor(props) {
     }
 
     function txtToMarkDown(txt) {
-        let res = textAreaValue.replace(/^([#][#] )(.*)/gm, (m,g)=>`<h2>${m.slice(3)}</h2>`);
-        res = res.replace(/^([#][#][#] )(.*)/gm, (m,g)=>`<h3>${m.slice(3)}</h3>`);
+        let res = textAreaValue.replace(/(\n)/gm, (m, g) => `${m}<br>`);
+        res = res.replace(/^([#][#] )(.*)/gm, (m, g) => `<h2>${m.slice(3)}</h2>`);
+        res = res.replace(/^([#][#][#] )(.*)/gm, (m, g) => `<h3>\n${m.slice(3)}</h3>`);
         return React.createElement("p", {dangerouslySetInnerHTML: {__html: res}})
     }
+
     // function htmlDecode(input){
     //     var e = document.createElement('div');
     //     e.innerHTML = input;
