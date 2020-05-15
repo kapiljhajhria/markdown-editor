@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
 .homePage{
     display: flex;
     height: 100vh;
@@ -8,13 +14,24 @@
     text-align: left;
     background-color: #282C34;
     color: aliceblue;
+    height: 100%;
+    /*width: 100%;*/
+    font-size: 16px;
 }
-
+.inputDiv, .outputDiv{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #000000;
+}
 .txtArea{
     flex: 1;
     height: 100%;
+    /*width: 100%;*/
     /*font-size: 20px;*/
-
     background-color:#212534;
     color: aliceblue;
+}
+br{
+    color: #61dafb;
 }

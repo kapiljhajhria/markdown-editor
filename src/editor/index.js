@@ -42,14 +42,20 @@ export default function Editor(props) {
     return (
         <div className="homePage">
 
-            <textarea className={"txtArea"}
-                      value={textAreaValue}
-                      onChange={handleChange}
-            />
+            <div className={"inputDiv"}>
+                Enter Markdown Text
+                <textarea className={"txtArea"}
+                          value={textAreaValue}
+                          onChange={handleChange}
+                />
+            </div>
 
-            <div className="txtOutput">
-                {/*<div dangerouslySetInnerHTML={{ __html: htmlDecode(testString) }} />*/}
-                {txtToMarkDown(textAreaValue)}
+            <div className="outputDiv">
+                MarkDown Preview
+                <div className="txtOutput">
+                    {/*<div dangerouslySetInnerHTML={{ __html: htmlDecode(testString) }} />*/}
+                    {txtToMarkDown(textAreaValue)}
+                </div>
             </div>
         </div>
     )
