@@ -1,3 +1,6 @@
+
+Project live @ [Live Preview](https://kapiljhajhria.github.io/markdown-editor/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
