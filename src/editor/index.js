@@ -18,12 +18,15 @@ export default function Editor(props) {
     function txtToMarkDown(txt) {
         // let res = textAreaValue.replace(/(\n)/gm, (m, g) => `${m}<br>`);
         let res = textAreaValue;
-        res = res.replace(/^[#] (.*)/gm, (m, g) => `<h1>${g}</h1>`);
-        res = res.replace(/^[#][#] (.*)/gm, (m, g) => `<h2>${g}</h2>`);
-        res = res.replace(/^[#][#][#] (.*)/gm, (m, g) => `<h3>${g}</h3>`);
-        res = res.replace(/^[-] (.*)/gm, (m, g) => `<li>${g}</li>`);
-        res = res.replace(/^[-][-][-] (.*)/gm, (m, g) => `<hr>${g}</hr>`);
-        res = res.replace(/(\n)/gm, (m, g) => `<br>`);
+
+
+        res = res.replace(/^[#] (.*)\n?/gm, (m, g) => `<h1>${g}</h1>`);
+        res = res.replace(/^[#][#] (.*)\n?/gm, (m, g) => `<h2>${g}</h2>`);
+        res = res.replace(/^[#][#][#] (.*)\n?/gm, (m, g) => `<h3>${g}</h3>`);
+        res = res.replace(/^[-] (.*)\n?/gm, (m, g) => `<li>${g}</li>`);
+        res = res.replace(/^[-][-][-] (.*)\n?/gm, (m, g) => `<hr>${g}</hr>`);
+        res = res.replace(/^\s|w*$/gm, (m, g) => `<br>`);
+
         return React.createElement("div", {dangerouslySetInnerHTML: {__html: res}})
     }
 
