@@ -6,10 +6,15 @@
 .txtOutput{
     flex: 1;
     text-align: left;
+    background-color: #282C34;
+    color: aliceblue;
 }
 
 .txtArea{
     flex: 1;
     height: 100%;
     /*font-size: 20px;*/
+
+    background-color:#212534;
+    color: aliceblue;
 }

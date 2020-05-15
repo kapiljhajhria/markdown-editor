@@ -24,7 +24,7 @@ export default function Editor(props) {
         res = res.replace(/^[-] (.*)/gm, (m, g) => `<li>${g}</li>`);
         res = res.replace(/^[-][-][-] (.*)/gm, (m, g) => `<hr>${g}</hr>`);
         res = res.replace(/(\n)/gm, (m, g) => `<br>`);
-        return React.createElement("p", {dangerouslySetInnerHTML: {__html: res}})
+        return React.createElement("div", {dangerouslySetInnerHTML: {__html: res}})
     }
 
     // function htmlDecode(input){
